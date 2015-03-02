@@ -1,6 +1,6 @@
 {
-    "name": "nvellon/phptree",
-    "description": "Trees implementation",
+    "name": "phptree/phptree",
+    "description": "Tree structure implementation",
     "keywords": [],
     "homepage": "http://github.com/nvellon/phptree",
     "type": "library",
