@@ -46,11 +46,14 @@ class BinaryTree
     public function insert($item)
     {
         $node = new BinaryNode($item);
+
         if ($this->isEmpty()) {
             $this->root = $node;
         } else {
-            $this->insertNode($node, $this->root);
+            return $this->insertNode($node, $this->root);
         }
+
+        return true;
     }
 
     /**
@@ -65,15 +68,18 @@ class BinaryTree
     {
         if ($subtree === null) {
             $subtree = $node;
+            return true;
         } else {
             if ($node->value > $subtree->value) {
-                $this->insertNode($node, $subtree->right);
+                return $this->insertNode($node, $subtree->right);
             } else if ($node->value < $subtree->value) {
-                $this->insertNode($node, $subtree->left);
+                return $this->insertNode($node, $subtree->left);
             } else {
                 // reject duplicates
             }
         }
+
+        return false;
     }
 
     /**
